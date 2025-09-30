@@ -9,38 +9,13 @@
     <script src="js/lib/aframe-ar.js"></script>
     <script src="Build/UnityLoader.js"></script>
     <script src="js/app.js"></script>
-// 以上為
-    <style>
-      #splashScreen {
-        position: fixed; /* Keep it fixed over all content */
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: black; /* Default background if image fails or for margin */
-        display: flex; /* Use flexbox to center the image */
-        justify-content: center; /* Center horizontally */
-        align-items: center; /* Center vertically */
-        z-index: 1000; /* Ensure it's on top of everything */
-        cursor: pointer; /* Indicate it's clickable */
-      }
-      #splashScreen img {
-        max-width: 100%; /* Ensure image fits within the screen */
-        max-height: 100%;
-        object-fit: contain; /* Ensures the whole image is visible without cropping */
-      }
-      .hidden {
-        display: none !important; /* Utility class to hide the screen */
-      }
-    </style>
+
+
 
   </head>
 
   
   <body style="margin: 0px; overflow: hidden;">
-    <div id="splashScreen">
-      <img src="cover.png" alt="Click to Start AR Experience">
-    </div>
 
 
 
@@ -61,14 +36,6 @@
       <a-entity camera cameratransform></a-entity>
     </a-scene>
 
-    <script>
-      document.getElementById('splashScreen').addEventListener('click', function() {
-        this.classList.add('hidden');
-        
-        // Optional: If you need to manually start A-Frame/AR.js's camera
-        // or a Unity component that might be paused, you can add that code here.
-      });
-    </script>
 
   </body>
 </html>

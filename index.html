@@ -16,7 +16,7 @@
         }
 
         /* 2. 讓 iframe 佔滿整個 body，載入您的 Unity AR 內容 */
-        #arIframe {
+        iframe {
             width: 100%;
             height: 100%;
             border: none; /* 移除 iframe 邊框 */
@@ -27,11 +27,7 @@
 </head>
 <body>
 
-    <iframe id="arIframe" src="game/index.html" allow="camera; microphone; display-capture; autoplay" frameborder="0"></iframe>
-
-    <div id="splashScreen">
-        <img src="cover.png" alt="點擊開始 AR 體驗">
-    </div>
+    <iframe src="game/index.html" ></iframe>
 
 
 
