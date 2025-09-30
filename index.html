@@ -1,28 +1,27 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="zh-TW">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AR 啟動畫面</title>
+    <title>AR</title>
     
     <style>
-        /* 1. 確保頁面佔滿整個視窗 */
-        html, body {
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
             margin: 0;
-            padding: 0;
-            width: 100%;
-            height: 100%;
-            overflow: hidden; 
+            background-color: #ffffff;
         }
 
-        /* 2. 讓 iframe 佔滿整個 body，載入您的 Unity AR 內容 */
         iframe {
-            width: 100%;
-            height: 100%;
-            border: none; /* 移除 iframe 邊框 */
+            width: 100vmin; /* 視窗寬度的 100% */
+            height: 100vmin; /* 視窗高度的 100% */
+            max-width: 1350px;
+            max-height: 1350px;
+            border: none; /* 無邊框 */
         }
-
-
     </style>
 </head>
 <body>
