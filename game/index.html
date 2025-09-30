@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Unity WebGL Player | WebGL Test AR</title>
+    <script src="js/lib/aframe.min.js"></script>
+    <script src="js/lib/aframe-ar.js"></script>
+    <script src="Build/UnityLoader.js"></script>
+    <script src="js/app.js"></script>
+// 以上為
+    <style>
+      #splashScreen {
+        position: fixed; /* Keep it fixed over all content */
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: black; /* Default background if image fails or for margin */
+        display: flex; /* Use flexbox to center the image */
+        justify-content: center; /* Center horizontally */
+        align-items: center; /* Center vertically */
+        z-index: 1000; /* Ensure it's on top of everything */
+        cursor: pointer; /* Indicate it's clickable */
+      }
+      #splashScreen img {
+        max-width: 100%; /* Ensure image fits within the screen */
+        max-height: 100%;
+        object-fit: contain; /* Ensures the whole image is visible without cropping */
+      }
+      .hidden {
+        display: none !important; /* Utility class to hide the screen */
+      }
+    </style>
+
+  </head>
+
+  
+  <body style="margin: 0px; overflow: hidden;">
+    <div id="splashScreen">
+      <img src="cover.png" alt="Click to Start AR Experience">
+    </div>
+
+
+
+    <a-scene embedded arjs vr-mode-ui="enabled: false" copycanvas>
+      <div id="unityContainer" style="z-index: 2" ></div>
+      <!-- <a-marker preset="hiro"> <a-box></a-box> </a-marker> -->
+      <!-- <a-marker type="pattern" url="data/markers/pattern-arjs.patt"><a-box></a-box></a-marker> -->
+      <!-- <a-marker type="pattern" url="data/markers/test.patt" markercontroller="name : hiro"></a-marker> -->
+
+			<a-marker type="pattern" url="data/markers\Hiro.patt" markercontroller="name : Hiro"></a-marker>
+			<a-marker type="pattern" url="data/markers\marker-cat.patt" markercontroller="name : marker-cat"></a-marker>
+			<a-marker type="pattern" url="data/markers\marker-dog1.patt" markercontroller="name : marker-dog1"></a-marker>
+			<a-marker type="pattern" url="data/markers\marker-dog2.patt" markercontroller="name : marker-dog2"></a-marker>
+			<a-marker type="pattern" url="data/markers\marker-mouse.patt" markercontroller="name : marker-mouse"></a-marker>
+			<a-marker type="pattern" url="data/markers\Nutty.patt" markercontroller="name : Nutty"></a-marker>
+			<a-marker type="pattern" url="data/markers\NuttyCardboard.patt" markercontroller="name : NuttyCardboard"></a-marker>
+
+      <a-entity camera cameratransform></a-entity>
+    </a-scene>
+
+    <script>
+      document.getElementById('splashScreen').addEventListener('click', function() {
+        this.classList.add('hidden');
+        
+        // Optional: If you need to manually start A-Frame/AR.js's camera
+        // or a Unity component that might be paused, you can add that code here.
+      });
+    </script>
+
+  </body>
+</html>
